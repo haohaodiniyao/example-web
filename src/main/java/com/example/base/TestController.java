@@ -1,17 +1,17 @@
 package com.example.base;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import com.example.base.handler.RestWrapper;
+
+@RestController
 @RequestMapping("/spring")
 public class TestController {
 	
 	@RequestMapping("/test")
-	@ResponseBody
-	public String msg(String msg){
-		return msg;
+	public String msg(RestWrapper restWrapper){
+		return restWrapper.getReqParam();
 	}
 
 }
