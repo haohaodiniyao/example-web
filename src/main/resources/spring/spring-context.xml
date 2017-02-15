@@ -20,4 +20,7 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
 	</context:component-scan>
 	<context:annotation-config></context:annotation-config>
+	<bean autowire="byType" class="com.example.base.server.bus.imp.BusServerImp" init-method="init" lazy-init="false"></bean>
+	
+	<bean autowire="byType" class="com.example.base.server.bus.imp.BusServerImp2" init-method="init" lazy-init="false"></bean>
 </beans>
