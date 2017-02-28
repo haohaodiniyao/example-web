@@ -1,5 +1,7 @@
 package com.example.test;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.example.base.mapper.User;
 import com.example.base.mapper.UserMapper;
+import com.example.base.model.Person;
+import com.google.common.collect.Lists;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring/*.xml")
@@ -31,7 +35,9 @@ public class JunitTest {
 //			System.out.println(list.next());
 //		}
 		User user = new User();
-		user.setCode1(new Byte("-128"));
+		
+		
+		
 		userMapper.insertSelective(user);
 	}
 	
