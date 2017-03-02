@@ -23,4 +23,31 @@
 	<bean autowire="byType" class="com.example.base.server.bus.imp.BusServerImp" init-method="init" lazy-init="false"></bean>
 	
 	<bean autowire="byType" class="com.example.base.server.bus.imp.BusServerImp2" init-method="init" lazy-init="false"></bean>
+	
+	<bean class="com.example.base.process.RequestModel">
+		<property name="list">
+			<list>
+				<value>1</value>
+				<value>2</value>
+			</list>
+		</property>
+		<property name="set">
+			<set>
+				<value>1</value>
+				<value>2</value>
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="1" value="1"></entry>
+				<entry key="2" value="2"></entry>
+			</map>
+		</property>
+		<property name="props">
+			<props>
+				<prop key="1">1</prop>
+				<prop key="2">2</prop>
+			</props>
+		</property>
+	</bean>
 </beans>
