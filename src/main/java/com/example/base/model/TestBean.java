@@ -15,11 +15,6 @@ public class TestBean {
 	public void setMsg2(String msg2) {
 		this.msg2 = msg2;
 	}
-	public TestBean(String msg1, String msg2) {
-		super();
-		this.msg1 = msg1;
-		this.msg2 = msg2;
-	}
 	
 	public String getResult(String msg){
 		return msg;
