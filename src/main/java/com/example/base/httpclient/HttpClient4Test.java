@@ -1,15 +1,5 @@
 package com.example.base.httpclient;
 
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.dolphin.util.Base64Util;
-import org.junit.Test;
-
-import com.alibaba.fastjson.JSON;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.charset.CodingErrorAction;
@@ -64,6 +54,7 @@ import org.apache.http.message.LineParser;
 import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.EntityUtils;
+import org.junit.Test;
 public class HttpClient4Test {
 
 	@Test

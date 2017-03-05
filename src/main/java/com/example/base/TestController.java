@@ -3,7 +3,7 @@ package com.example.base;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.dolphin.http.RestWrapper;
+import org.dolphin.commons.http.RestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
