@@ -16,7 +16,7 @@
 			<dependency>
 			  <groupId>org.dolphin.commons</groupId>
 			  <artifactId>dolphin</artifactId>
-			  <version>0.0.1-SNAPSHOT</version>			
+			  <version>0.0.1-SNAPSHOT</version>	
 			</dependency>        
             <!-- spring -->
             <dependency>
