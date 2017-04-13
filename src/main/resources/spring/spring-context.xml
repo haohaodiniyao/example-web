@@ -20,9 +20,10 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
 	</context:component-scan>
 	<context:annotation-config></context:annotation-config>
-	<bean autowire="byType" class="com.example.base.server.bus.imp.BusServerImp" init-method="init" lazy-init="false"></bean>
+	<!--  <bean autowire="byType" class="com.example.base.server.bus.imp.BusServerImp" init-method="init" lazy-init="false"></bean>
 	
-	<bean autowire="byType" class="com.example.base.server.bus.imp.BusServerImp2" init-method="init" lazy-init="false"></bean>
+	<bean autowire="byType" class="com.example.base.server.bus.imp.BusServerImp2" init-method="init" lazy-init="false"></bean>-->
+	<bean class="com.example.base.server.bus.imp.BusServerImp2" scope="prototype"></bean>
 	
 	<bean class="com.example.base.process.RequestModel">
 		<property name="list">
@@ -50,4 +51,14 @@
 			</props>
 		</property>
 	</bean>
+	<bean class="com.example.base.MyProxy"></bean>
+	<bean class="com.example.base.event.MyEvent"></bean>
+	<bean class="com.example.base.event.MyEvent2"></bean>
+	<bean class="com.example.base.event.MyListener"></bean>
+	<bean class="com.example.base.event.MyListener2"></bean>
+	<bean class="com.example.base.event.MyListener3"></bean>
+	<bean class="com.example.base.event.MyListener4"></bean>
+	<task:scheduler id="scheduler" pool-size="10"/>
+	<task:executor id="executor" pool-size="10"/>
+	<task:annotation-driven executor="executor" scheduler="scheduler" proxy-target-class="true"/>
 </beans>

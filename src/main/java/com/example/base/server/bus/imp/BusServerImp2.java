@@ -1,7 +1,10 @@
 package com.example.base.server.bus.imp;
 
-import com.example.base.server.bus.BusServer2;
+import org.dolphin.commons.annotations.Yuni;
+import org.dolphin.commons.annotations.YuniLogger;
 
+import com.example.base.server.bus.BusServer2;
+@Yuni
 public class BusServerImp2 implements BusServer2{
 
 	public void init(){
@@ -9,6 +12,7 @@ public class BusServerImp2 implements BusServer2{
 	}
 	
 	@Override
+	@YuniLogger
 	public String call(String msg) {
 		System.out.println(msg);
 		return msg;
