@@ -52,12 +52,12 @@
 		</property>
 	</bean>
 	<bean class="com.example.base.MyProxy"></bean>
-	<bean class="com.example.base.event.MyEvent"></bean>
-	<bean class="com.example.base.event.MyEvent2"></bean>
-	<bean class="com.example.base.event.MyListener"></bean>
-	<bean class="com.example.base.event.MyListener2"></bean>
-	<bean class="com.example.base.event.MyListener3"></bean>
-	<bean class="com.example.base.event.MyListener4"></bean>
+	<bean class="com.example.base.event.register.RegisterEvent"></bean>
+	<bean class="com.example.base.event.book.BookEvent"></bean>
+	<bean class="com.example.base.event.book.InsuranceListener"></bean>
+	<bean class="com.example.base.event.register.IntegralListener"></bean>
+	<bean class="com.example.base.event.book.LoungeListener"></bean>
+	<bean class="com.example.base.event.register.UserListener"></bean>
 	<task:scheduler id="scheduler" pool-size="10"/>
 	<task:executor id="executor" pool-size="10"/>
 	<task:annotation-driven executor="executor" scheduler="scheduler" proxy-target-class="true"/>

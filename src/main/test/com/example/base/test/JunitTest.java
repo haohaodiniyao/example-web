@@ -1,5 +1,7 @@
 package com.example.base.test;
 
+import java.util.UUID;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.example.base.event.MyEvent;
-import com.example.base.event.MyEvent2;
+import com.example.base.event.register.RegisterEvent;
 
 @RunWith(SpringJUnit4ClassRunner.class)  
 @ContextConfiguration(locations={"classpath:root.xml"})
@@ -17,25 +18,21 @@ public class JunitTest {
     private ApplicationContext applicationContext;  
 	@Test
 	public void test() {
-        new Thread(new Runnable(){
-			@Override
-			public void run() {
-				MyEvent myEvent = new MyEvent();
-				myEvent.setMsg("hello world");
-				applicationContext.publishEvent(myEvent);
-			}
-        }).start();
+		for(int i=0;i<100;i++){
+			int index = i+1;
+	        new Thread(new Runnable(){
+				@Override
+				public void run() {
+					RegisterEvent registerEvent = new RegisterEvent();
+					registerEvent.setMsg("hello world#"+index);
+					applicationContext.publishEvent(registerEvent);
+				}
+	        }).start();			
+		}
 
-        new Thread(new Runnable(){
-			@Override
-			public void run() {
-				MyEvent2 myEvent2 = new MyEvent2();
-				myEvent2.setMsg("hello world2");
-				applicationContext.publishEvent(myEvent2);
-			}
-        }).start();
+
         try {
-			Thread.sleep(50*1000);
+			Thread.sleep(5000*1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
