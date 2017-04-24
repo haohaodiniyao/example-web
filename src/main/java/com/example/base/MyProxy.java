@@ -2,13 +2,18 @@ package com.example.base;
 
 import org.dolphin.commons.annotations.Yuni;
 import org.dolphin.commons.proxy.CglibProxy;
+import org.dolphin.commons.util.host.IPUtil;
+import org.dolphin.commons.util.host.PortUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 public class MyProxy implements BeanPostProcessor{
-
+	Logger log = LoggerFactory.getLogger(MyProxy.class);
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+		log.info(IPUtil.getIP()+":"+PortUtil.getTomcatPort());
 		return bean;
 	}
 
