@@ -13,7 +13,7 @@ public class MyProxy implements BeanPostProcessor{
 	Logger log = LoggerFactory.getLogger(MyProxy.class);
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-		log.info(IPUtil.getIP()+":"+PortUtil.getTomcatPort());
+//		log.info(IPUtil.getIP()+":"+PortUtil.getTomcatPort());
 		return bean;
 	}
 

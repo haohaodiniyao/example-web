@@ -18,4 +18,5 @@
 
 	<import resource="spring/spring-context.xml"/>
 	<import resource="config/syscode-iao.xml"/>
+	<import resource="spring/spring-mybatis.xml"></import>
 </beans>
