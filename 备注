@@ -1,0 +1,18 @@
+-- MySQL5.5MySQL5.1操作分区
+http://database.51cto.com/art/201002/184392.htm
+-- MySQL表分区
+https://segmentfault.com/a/1190000005158309
+-- 删除分区
+ALTER TABLE user drop PARTITION d2000;
+-- truncate partition(保留分区结构 MYSQL5.5)
+alter table user truncate partition d200;
+-- 新增分区MySQL5.1
+ALTER table user add PARTITION(PARTITION d2000 VALUES less than(TO_DAYS('2017-05-21')));
+-- 已存在表创建分区MySQL5.5  date
+ALTER TABLE user PARTITION by RANGE COLUMNS(create_date)(
+PARTITION d20170516 VALUES less than ('2017-05-17'),
+PARTITION d20170517 VALUES less than ('2017-05-18'),
+PARTITION d20170518 VALUES less than ('2017-05-19'),
+PARTITION d20170519 VALUES less than ('2017-05-20'),
+PARTITION other VALUES less than (MAXVALUE)
+);
