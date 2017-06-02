@@ -16,3 +16,23 @@ PARTITION d20170518 VALUES less than ('2017-05-19'),
 PARTITION d20170519 VALUES less than ('2017-05-20'),
 PARTITION other VALUES less than (MAXVALUE)
 );
+
+-- SQL查询优化,延迟关联
+SELECT
+	*
+FROM
+	yuni_trace_msg_d  
+	,
+	(
+		SELECT
+			id
+		FROM
+			yuni_trace_msg_d
+		LIMIT 760000,
+		20
+	) b
+WHERE
+	a.id = b.id
+	
+	
+-- 一个博客系统  https://segmentfault.com/a/1190000009471448	
