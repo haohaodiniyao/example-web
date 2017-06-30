@@ -9,7 +9,14 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath*:spring/spring-context.xml</param-value>
 	</context-param>
-
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:spring/spring-dubbo.xml</param-value>
+	</context-param>	
+    <context-param>
+    	<param-name>dubbo.application.logger</param-name>
+    	<param-value>slf4j</param-value>
+    </context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

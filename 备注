@@ -1,6 +1,7 @@
 -- MySQL5.5MySQL5.1操作分区
 http://database.51cto.com/art/201002/184392.htm
 -- MySQL表分区
+http://www.codesky.net/article/201004/168271.html
 https://segmentfault.com/a/1190000005158309
 -- 删除分区
 ALTER TABLE user drop PARTITION d2000;
@@ -16,6 +17,12 @@ PARTITION d20170518 VALUES less than ('2017-05-19'),
 PARTITION d20170519 VALUES less than ('2017-05-20'),
 PARTITION other VALUES less than (MAXVALUE)
 );
+
+
+--error
+--新增分区必须严格自增
+[Err] 1493 - VALUES LESS THAN value must be strictly increasing for each partition
+[Err] 1517 - Duplicate partition name d17629
 
 -- SQL查询优化,延迟关联
 SELECT

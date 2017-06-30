@@ -13,11 +13,13 @@
         <springframework.version>4.3.5.RELEASE</springframework.version>
     </properties>
         <dependencies>
+        <!--  
 			<dependency>
 			  <groupId>org.dolphin.commons</groupId>
 			  <artifactId>dolphin</artifactId>
 			  <version>0.0.1-SNAPSHOT</version>	
-			</dependency>        
+			</dependency>   
+			-->     
             <!-- spring -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -128,6 +130,25 @@
 			    <groupId>ch.qos.logback</groupId>
 			    <artifactId>logback-classic</artifactId>
 			    <version>1.2.3</version>
+			</dependency>
+			
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>jcl-over-slf4j</artifactId>
+    <version>1.7.25</version>
+</dependency>
+			
+			<!-- dubbo -->
+			<dependency>
+			    <groupId>com.alibaba</groupId>
+			    <artifactId>dubbo</artifactId>
+			    <version>2.5.3</version>
+			    <exclusions>
+	                <exclusion>
+	                    <groupId>org.springframework</groupId>
+	                    <artifactId>spring</artifactId>
+	                </exclusion>			    
+			    </exclusions>
 			</dependency>
 			
 		</dependencies>

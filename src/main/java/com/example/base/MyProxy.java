@@ -1,9 +1,5 @@
 package com.example.base;
 
-import org.dolphin.commons.annotations.Yuni;
-import org.dolphin.commons.proxy.CglibProxy;
-import org.dolphin.commons.util.host.IPUtil;
-import org.dolphin.commons.util.host.PortUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -20,12 +16,12 @@ public class MyProxy implements BeanPostProcessor{
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 		Class<?> targetClass = bean.getClass();
-		if(targetClass.isAnnotationPresent(Yuni.class)){
-			System.out.println("before->bean:"+bean+"->beanName:"+beanName);	
-			CglibProxy cglibProxy = new CglibProxy(bean);
-			Object proxyBean = cglibProxy.getProxy();
-			System.out.println("proxyBean:"+proxyBean);
-		}
+//		if(targetClass.isAnnotationPresent(Yuni.class)){
+//			System.out.println("before->bean:"+bean+"->beanName:"+beanName);	
+//			CglibProxy cglibProxy = new CglibProxy(bean);
+//			Object proxyBean = cglibProxy.getProxy();
+//			System.out.println("proxyBean:"+proxyBean);
+//		}
 		return bean;
 	}
 
