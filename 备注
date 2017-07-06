@@ -43,3 +43,14 @@ WHERE
 	
 	
 -- 一个博客系统  https://segmentfault.com/a/1190000009471448	
+
+-- mysql时间函数 (时区 夏令时 冬令时(标准时间))
+http://www.blogjava.net/titanaly/archive/2009/08/17/291454.html
+
+-- 实现ApplicationContextAware获取javabean
+--java大神博客 花钱的年华
+http://www.jianshu.com/p/5ec125fd55f9
+http://calvin1978.blogcn.com/
+http://www.kissyu.org/2016/08/13/%E9%99%90%E6%B5%81%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/
+-- 占小狼
+http://www.jianshu.com/u/90ab66c248e6
