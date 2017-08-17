@@ -15,21 +15,35 @@
      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
      http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd
      http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-4.3.xsd">
-
      <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
           <property name="driverClass" value="com.mysql.jdbc.Driver" />
           <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/mydb"/>
           <property name="user" value="root" />
           <property name="password" value="123456" />
-          <property name="initialPoolSize" value="2" />
+          <!-- 初始化连接数 默认3 -->
+          <property name="initialPoolSize" value="3" />
+          <!-- 最大连接数 默认15 -->
+          <property name="maxPoolSize" value="15" />
+          <!-- 最小连接数 默认3 -->
           <property name="minPoolSize" value="1" />
-          <property name="maxPoolSize" value="10" />
-          <property name="acquireIncrement" value="2" />
+          <!-- 最大空闲时间 单位秒 默认0 永不失效 -->
           <property name="maxIdleTime" value="60" />
+          <!-- 连接用完 一次获取连接数 默认3 -->
+          <property name="acquireIncrement" value="2" />
+          <!-- 测试空闲连接有效性  单位秒 默认0 从不测试-->
+          <property name="idleConnectionTestPeriod" value="0"/>
+          <!-- 获取连接超时时间	单位毫秒	超时抛SQLException异常	 默认0无线等待 -->
           <property name="checkoutTimeout" value="6000" />
+          <!-- 测试获取连接的有效性 -->
           <property name="testConnectionOnCheckin" value="false" />
       </bean>
 	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- 注解事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath:com/example/base/mapper/*.xml" />

@@ -8,7 +8,7 @@
     <sqlMapGenerator targetPackage="com.example.base.mapper" targetProject="example-web/src/main/java" />
     <javaClientGenerator targetPackage="com.example.base.mapper" targetProject="example-web/src/main/java" type="XMLMAPPER" />
     <table schema="" tableName="user" >
-  		<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+  		
     </table>
   </context>
 </generatorConfiguration>

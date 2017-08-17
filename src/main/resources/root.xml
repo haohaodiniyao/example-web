@@ -17,6 +17,8 @@
      http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-4.3.xsd">
 
 	<import resource="spring/spring-context.xml"/>
+	<!--  
 	<import resource="config/syscode-iao.xml"/>
+	-->
 	<import resource="spring/spring-mybatis.xml"></import>
 </beans>
