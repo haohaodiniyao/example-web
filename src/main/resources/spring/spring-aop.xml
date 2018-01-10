@@ -22,7 +22,8 @@
      <bean class="com.example.base.aop.aop2.MyAOPDemo3"></bean>
      <bean class="com.example.base.aop.aop2.MyAOPDemo4"></bean>
      <bean class="com.example.base.aop.aop2.aop3.MyAOPDemo5"></bean>
-     <bean class="com.example.base.aop.aop2.aop3.MyAOPDemo6"></bean>     
+     <bean class="com.example.base.aop.aop2.aop3.MyAOPDemo6"></bean>   
+     <!-- 有序 -->  
      <aop:config>
         <!-- 指定类的所有方法             (..)代表参数-->
         <!-- <aop:pointcut expression="execution(* com.example.base.aop.MyAOPDemo.*(..))" id="pt"/> -->
