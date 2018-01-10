@@ -6,18 +6,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.example.base.mapper.User;
-import com.example.base.mapper.UserMapper;
+import com.example.base.aop.MyAOPDemo1;
+import com.example.base.aop.MyAOPDemo2;
+import com.example.base.aop.aop2.MyAOPDemo3;
+import com.example.base.aop.aop2.MyAOPDemo4;
+import com.example.base.aop.aop2.aop3.MyAOPDemo5;
+import com.example.base.aop.aop2.aop3.MyAOPDemo6;
 
 @RunWith(SpringJUnit4ClassRunner.class)  
-@ContextConfiguration(locations={"classpath:root.xml"})
+@ContextConfiguration(locations={"classpath:spring/spring-aop.xml"})
 public class JunitTest {
 	@Autowired
-	private UserMapper userMapper;
+	private MyAOPDemo1 myAOPDemo1;
+	@Autowired
+	private MyAOPDemo2 myAOPDemo2;
+	@Autowired
+	private MyAOPDemo3 myAOPDemo3;
+	@Autowired
+	private MyAOPDemo4 myAOPDemo4;
+	@Autowired
+	private MyAOPDemo5 myAOPDemo5;
+	@Autowired
+	private MyAOPDemo6 myAOPDemo6;
 	@Test
 	public void test() {
-		
-		User user = new User();
+		myAOPDemo1.getMsg("hello aop1");	
+		myAOPDemo2.getMsg("hello aop2");	
+		myAOPDemo3.getMsg("hello aop3");
+		myAOPDemo4.getMsg("hello aop4");
+		myAOPDemo5.getMsg("hello aop5");
+		myAOPDemo6.getMsg("hello aop6");
+//		User user = new User();
 //		user.setId(1L);
 //		user.setUid(100);
 //		userMapper.updateByPrimaryKeySelective(user);
