@@ -29,13 +29,19 @@ public class JunitTest {
 	@Autowired
 	private MyAOPDemo6 myAOPDemo6;
 	@Test
-	public void test() {
-		myAOPDemo1.getMsg("hello aop1");	
-		myAOPDemo2.getMsg("hello aop2");	
-		myAOPDemo3.getMsg("hello aop3");
-		myAOPDemo4.getMsg("hello aop4");
-		myAOPDemo5.getMsg("hello aop5");
-		myAOPDemo6.getMsg("hello aop6");
+	public void test() throws Exception {
+		myAOPDemo1.getMsg("hello aop1");
+		try {
+			Thread.sleep(100*1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		myAOPDemo2.getMsg("hello aop2");	
+//		myAOPDemo3.getMsg("hello aop3");
+//		myAOPDemo4.getMsg("hello aop4");
+//		myAOPDemo5.getMsg("hello aop5");
+//		myAOPDemo6.getMsg("hello aop6");
 //		User user = new User();
 //		user.setId(1L);
 //		user.setUid(100);
