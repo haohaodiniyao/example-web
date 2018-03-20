@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.util.CollectionUtils;
 
 import com.example.base.aop.MyAOPDemo1;
 import com.example.base.aop.MyAOPDemo2;
